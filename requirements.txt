@@ -1,2 +1,3 @@
 akshare
 streamlit
+protobuf==3.20.3  # 指定 protobuf 的版本
