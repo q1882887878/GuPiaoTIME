@@ -7,7 +7,9 @@ def get_a_stock_listing_date(stock_code):
         # 使用 akshare 查询 A 股基本信息
         stock_info = ak.stock_individual_info_em(symbol=stock_code)
         listing_date = stock_info.loc[stock_info['item'] == '上市时间', 'value'].values[0]
-        return listing_date
+        # 在日期后添加 0930
+        listing_date_with_time = f"{listing_date}0930"
+        return listing_date_with_time
     except Exception as e:
         return f"查询失败: {e}"
 
